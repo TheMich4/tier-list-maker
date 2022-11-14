@@ -1,6 +1,6 @@
 import { type NextPage } from "next";
 import Head from "next/head";
-import { Footer, Input, Navbar } from "../components";
+import { Footer, Input, Navbar, TierList } from "../components";
 import { useState } from "react";
 
 const Home: NextPage = () => {
@@ -43,6 +43,8 @@ const Home: NextPage = () => {
           </div>
 
           <div className="divider" />
+
+          <TierList />
         </div>
       </main>
 
