@@ -1,8 +1,13 @@
 import TierItem from "../TierItem";
+import type { TierItemContainerProps } from "../types";
 import { useDrop } from "react-dnd";
 
-const TierItemContainer = ({ items, tierName, moveItemToTier }) => {
-  const [{ canDrop }, drop] = useDrop(() => ({
+const TierItemContainer = ({
+  items,
+  tierName,
+  moveItemToTier,
+}: TierItemContainerProps) => {
+  const [{}, drop] = useDrop(() => ({
     accept: "item",
     collect: (monitor) => ({
       isOver: monitor.isOver(),

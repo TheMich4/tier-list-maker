@@ -1,6 +1,7 @@
 export interface TierItem {
+  id: string;
   name: string;
-  color: string;
+  color?: string;
 }
 
 export interface TierRowProps {
@@ -8,4 +9,19 @@ export interface TierRowProps {
   color: string;
   name: string;
   items?: Array<TierItem>;
+  // TODO: Add item type
+  moveItemToTier: (item: any, tier: string) => void;
+}
+
+export interface TierItemProps {
+  name: string;
+  id: string;
+  tierName: string;
+}
+
+export interface TierItemContainerProps {
+  items?: Array<TierItem>;
+  tierName: string;
+  // TODO: Add item type
+  moveItemToTier: (item: any, tier: string) => void;
 }

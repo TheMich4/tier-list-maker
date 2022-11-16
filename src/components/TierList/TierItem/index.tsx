@@ -1,6 +1,7 @@
+import type { TierItemProps } from "../types";
 import { useDrag } from "react-dnd";
 
-const TierItem = ({ name, id, tierName }) => {
+const TierItem = ({ name, id, tierName }: TierItemProps) => {
   const [{}, drag] = useDrag(() => ({
     type: "item",
     item: { id, name, tierName },

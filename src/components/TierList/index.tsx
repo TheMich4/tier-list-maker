@@ -1,8 +1,10 @@
+import type { TierItem } from "./types";
 import TierRow from "./TierRow";
 import { useState } from "react";
 
 const TierList = () => {
-  const [tiers, setTiers] = useState([
+  // TODO: Add types
+  const [tiers, setTiers] = useState<Array<any>>([
     { name: "A", color: "red-200", items: [{ name: "111", id: 1 }] },
     {
       name: "B",
@@ -24,19 +26,16 @@ const TierList = () => {
     },
   ]);
 
-  const moveItemToTier = (item, newTier: string) => {
-    console.log({ tiers, item, newTier });
+  // TODO: Add types
+  const moveItemToTier = (item: any, newTier: string) => {
     setTiers((prevTiers) =>
       prevTiers.map((tier) => {
-        console.log("---------", { tier });
         if (tier.name === item.tierName) {
-          console.log(`removing from ${tier.name}`, { item, tier });
           return {
             ...tier,
-            items: tier.items?.filter((i) => i.id !== item.id),
+            items: tier.items?.filter((i: TierItem) => i.id !== item.id),
           };
         } else if (tier.name === newTier) {
-          console.log(`adding to ${tier.name}`, { tier, item });
           return {
             ...tier,
             items: tier.items ? [...tier.items, item] : [item],
