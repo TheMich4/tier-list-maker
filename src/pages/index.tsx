@@ -2,6 +2,8 @@ import { type NextPage } from "next";
 import Head from "next/head";
 import { Footer, Input, Navbar, TierList } from "../components";
 import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCheck } from "@fortawesome/free-solid-svg-icons";
 
 const Home: NextPage = () => {
   const [name, setName] = useState("");
@@ -23,22 +25,8 @@ const Home: NextPage = () => {
               value={name}
               onChange={(e) => setName(e.target.value)}
             />
-            {/* TODO: Change icon to accept */}
             <button className="btn-square btn">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
+              <FontAwesomeIcon icon={faCheck} color="white" size="lg" />
             </button>
           </div>
 
