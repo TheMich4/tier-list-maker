@@ -28,8 +28,12 @@ const TierList = () => {
 
   // TODO: Add types
   const moveItemToTier = (item: any, newTier: string) => {
-    setTiers((prevTiers) =>
-      prevTiers.map((tier) => {
+    setTiers((prevTiers) => {
+      if (item.tierName === newTier) {
+        return prevTiers;
+      }
+
+      return prevTiers.map((tier) => {
         if (tier.name === item.tierName) {
           return {
             ...tier,
@@ -43,8 +47,8 @@ const TierList = () => {
         } else {
           return tier;
         }
-      })
-    );
+      });
+    });
   };
 
   const renderTiers = () => {
