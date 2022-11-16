@@ -13,6 +13,8 @@ import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 config.autoAddCss = false;
 
+import font from "../config/font";
+
 const MyApp: AppType<{ session: Session | null }> = ({
   Component,
   pageProps: { session, ...pageProps },
@@ -20,7 +22,9 @@ const MyApp: AppType<{ session: Session | null }> = ({
   return (
     <DndProvider backend={HTML5Backend}>
       <SessionProvider session={session}>
-        <Component {...pageProps} />
+        <main className={`${font.variable} font-sans`}>
+          <Component {...pageProps} />
+        </main>
       </SessionProvider>
     </DndProvider>
   );

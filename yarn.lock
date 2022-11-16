@@ -65,7 +65,7 @@
   dependencies:
     "@fortawesome/fontawesome-common-types" "6.2.1"
 
-"@fortawesome/free-regular-svg-icons@^6.2.1":
+"@fortawesome/free-regular-svg-icons@6.2.1":
   version "6.2.1"
   resolved "https://registry.yarnpkg.com/@fortawesome/free-regular-svg-icons/-/free-regular-svg-icons-6.2.1.tgz#650e56d937755a8341f2eef258ecb6f95458820f"
   integrity sha512-wiqcNDNom75x+pe88FclpKz7aOSqS2lOivZeicMV5KRwOAeypxEYWAK/0v+7r+LrEY30+qzh8r2XDaEHvoLsMA==
@@ -121,6 +121,11 @@
   integrity sha512-W+fIIIaFU7Kct7Okx91C7XDRGolv/w2RUenX2yZFeeNVcuVzDIKUcNmckrYbYcwrNQUSXmtwrs3g8xwast0YtA==
   dependencies:
     glob "7.1.7"
+
+"@next/font@^13.0.3":
+  version "13.0.3"
+  resolved "https://registry.yarnpkg.com/@next/font/-/font-13.0.3.tgz#e483422262e33d0f195685dbaf4399576ecfe719"
+  integrity sha512-J3bZooNyhzhRshEJZlc4Kagfx6f8LQkPdCsP0nZm63dAUaoeMaQRidFFhbL68WZ3S5XleVfpGYypZuBSyJqYtw==
 
 "@next/swc-android-arm-eabi@13.0.2":
   version "13.0.2"
@@ -618,7 +623,7 @@ axobject-query@^2.2.0:
   resolved "https://registry.yarnpkg.com/axobject-query/-/axobject-query-2.2.0.tgz#943d47e10c0b704aa42275e20edf3722648989be"
   integrity sha512-Td525n+iPOOyUQIeBfcASuG6uJsDOITl7Mds5gFyerkWiX7qhUTdYUBlSgNMyVqtSJqwpt1kXGLdUt6SykLMRA==
 
-babel-plugin-macros@^3.1.0:
+babel-plugin-macros@3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-macros/-/babel-plugin-macros-3.1.0.tgz#9ef6dc74deb934b4db344dc973ee851d148c50c1"
   integrity sha512-Cg7TFGpIr01vOQNODXOOaGz2NpCU5gl8x1qJFbb6hbZxR7XrcE2vtbAsTAbJ7/xwJtUuJEw8K8Zr/AE0LHlesg==
