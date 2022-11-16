@@ -1,6 +1,6 @@
 const Navbar = () => {
   return (
-    <div className="navbar rounded-box mb-8 bg-neutral shadow-xl">
+    <div className="navbar mb-8 rounded-xl bg-neutral shadow-xl">
       <a className="btn-ghost btn text-xl normal-case text-base-200">
         tier-list-maker
       </a>

@@ -25,3 +25,7 @@ export interface TierItemContainerProps {
   // TODO: Add item type
   moveItemToTier: (item: any, tier: string) => void;
 }
+
+export interface TierLabelPrrops {
+  name: string;
+}

@@ -15,7 +15,7 @@ const TierList = () => {
         { name: "555", id: 5 },
       ],
     },
-    { name: "C", color: "orange-200" },
+    { name: "Some longer name", color: "orange-200" },
     {
       name: "D",
       color: "blue-200",
@@ -66,7 +66,7 @@ const TierList = () => {
   };
 
   return (
-    <div className="overflow-hidde card border border-black/10 bg-base-200/70 p-1 shadow-xl">
+    <div className="card overflow-hidden rounded-xl border border-black/10 bg-neutral p-1 shadow-xl">
       {renderTiers()}
     </div>
   );

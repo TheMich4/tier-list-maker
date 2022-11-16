@@ -33,7 +33,7 @@ const TierItemContainer = ({
 
   return (
     <div
-      className="flex w-full gap-1 rounded-lg border border-black/10"
+      className="flex w-full gap-1 rounded-lg border border-base-100/10"
       ref={drop}
     >
       {renderItems()}
