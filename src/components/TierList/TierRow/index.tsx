@@ -1,6 +1,7 @@
 import TierItemContainer from "../TierItemContainer";
 import TierLabel from "../TierLabel";
 import type { TierRowProps } from "../types";
+import TierSettings from "../TierSettings";
 
 // TODO: Use color
 
@@ -13,6 +14,7 @@ const TierRow = ({ name, color, items, moveItemToTier }: TierRowProps) => {
         tierName={name}
         moveItemToTier={moveItemToTier}
       />
+      <TierSettings />
     </div>
   );
 };
