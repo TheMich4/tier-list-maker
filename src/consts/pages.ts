@@ -2,7 +2,7 @@ const Pages = {
   home: "/",
   about: "/about",
   profile: "/profile",
-  login: "/login",
+  login: "/auth/login",
   settings: "/settings",
   create: "/create",
 };

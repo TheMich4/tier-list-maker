@@ -1,4 +1,20 @@
+import Pages from "../../../consts/pages";
+import { signOut } from "next-auth/react";
+import { useIsLoggedIn } from "../../../hooks";
+import { useRouter } from "next/router";
+
 const NavbarProfile = () => {
+  const router = useRouter();
+  const isLoggedIn = useIsLoggedIn();
+
+  const handleLog = () => {
+    if (isLoggedIn) {
+      signOut();
+    } else {
+      router.push(Pages.login);
+    }
+  };
+
   return (
     <div className="dropdown-end dropdown">
       <label tabIndex={0} className="btn-ghost btn-circle avatar btn">
@@ -20,7 +36,7 @@ const NavbarProfile = () => {
           <a>Settings</a>
         </li>
         <li>
-          <a>Logout</a>
+          <a onClick={handleLog}>{isLoggedIn ? "Log out" : "Log in"}</a>
         </li>
       </ul>
     </div>
