@@ -13,8 +13,7 @@ const Button = ({
 }: ButtonProps) => {
   return (
     <button
-      className={classNames("btn-primary btn flex gap-2", {
-        className,
+      className={classNames("btn-primary btn flex gap-2", className, {
         loading: isLoading,
       })}
       disabled={disabled}

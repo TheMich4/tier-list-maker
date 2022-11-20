@@ -1,6 +1,5 @@
-import { Button, Input } from "../../../components";
-
-import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import { Button, Card, Input } from "../../../components";
+import { faPlus, faTrash } from "@fortawesome/free-solid-svg-icons";
 
 const maxTiers = 10;
 
@@ -22,27 +21,39 @@ const TemplateCreateTiers = ({ tiers, setTiers }) => {
     );
   };
 
-  return (
-    <div className="flex flex-col gap-1">
-      <div>Tiers:</div>
-      <Button
-        disabled={tiers.length >= maxTiers}
-        Icon={faPlus}
-        iconProps={{ color: "black" }}
-        onClick={handleAddTier}
-      >
-        Add new tier
-      </Button>
+  const handleTierDelete = (tierId) => {
+    setTiers((prevTiers) => prevTiers.filter((tier) => tier.id !== tierId));
+  };
 
-      {tiers.map((tier) => (
-        <Input
-          value={tier.name}
-          key={tier.id}
-          placeholder="New tier name"
-          onChange={(event) => handleTierNameChange(event, tier.id)}
-        />
-      ))}
-    </div>
+  return (
+    <Card>
+      <div className="flex flex-col gap-1">
+        <div>Tiers:</div>
+        <Button
+          disabled={tiers.length >= maxTiers}
+          Icon={faPlus}
+          iconProps={{ color: "black" }}
+          onClick={handleAddTier}
+        >
+          Add new tier
+        </Button>
+
+        {tiers.map((tier) => (
+          <div key={tier.id} className="flex flex-row gap-2">
+            <Input
+              value={tier.name}
+              placeholder="New tier name"
+              onChange={(event) => handleTierNameChange(event, tier.id)}
+            />
+            <Button
+              className="btn-error"
+              Icon={faTrash}
+              onClick={() => handleTierDelete(tier.id)}
+            />
+          </div>
+        ))}
+      </div>
+    </Card>
   );
 };
 

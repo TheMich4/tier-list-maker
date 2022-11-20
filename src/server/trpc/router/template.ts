@@ -6,6 +6,7 @@ export const templateRouter = router({
   create: publicProcedure
     .input(
       z.object({
+        description: z.string().optional(),
         name: z.string(),
         tiers: z.array(
           z.object({
@@ -15,10 +16,10 @@ export const templateRouter = router({
       })
     )
     .mutation(async ({ ctx, input }) => {
-      console.log({ ctx, input, tiers: input.tiers });
       await ctx.prisma.template.create({
         data: {
           authorId: ctx.session?.user?.id,
+          description: input.description,
           name: input.name,
           tiers: { create: input.tiers.map((tier) => ({ name: tier.name })) },
         },
@@ -36,5 +37,4 @@ export const templateRouter = router({
       },
     });
   }),
-  // TODO: Add getall
 });

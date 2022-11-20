@@ -4,7 +4,7 @@ import type { IconDefinition } from "@fortawesome/free-brands-svg-icons";
 type ButtonIconProps = Omit<FontAwesomeIconProps, "icon">;
 
 export interface ButtonProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   className?: string;
   disabled?: boolean;
   onClick?: () => void;

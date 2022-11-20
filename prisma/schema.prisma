@@ -67,18 +67,18 @@ model VerificationToken {
 }
 
 model Template {
-  id        Int       @id @default(autoincrement())
-  name      String
-  createdAt DateTime  @default(now())
-  updatedAt DateTime  @updatedAt
-  author    User?     @relation(fields: [authorId], references: [id])
-  authorId  String?
-  tiers     Tier[]
+  id          Int       @id @default(autoincrement())
+  name        String
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  author      User?     @relation(fields: [authorId], references: [id])
+  authorId    String?
+  tiers       Tier[]
+  description String
 }
 
 model Tier {
   id          String   @id @default(cuid())
-  description String?
   name        String
   template    Template @relation(fields: [templateId], references: [id])
   templateId  Int
