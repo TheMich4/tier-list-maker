@@ -1,3 +1,4 @@
+import TemplateBrowseDisplay from "./TemplateBrowseDisplay";
 import TemplateCreateDisplay from "./TemplateCreateDisplay";
 
-export { TemplateCreateDisplay };
+export { TemplateBrowseDisplay, TemplateCreateDisplay };

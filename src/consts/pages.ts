@@ -1,11 +1,12 @@
 const Pages = {
-  home: "/",
   about: "/about",
-  profile: "/profile",
-  login: "/auth/login",
-  settings: "/settings",
   create: "/create",
-  template: "/template/create",
+  home: "/",
+  login: "/auth/login",
+  profile: "/profile",
+  settings: "/settings",
+  templateBrowse: "/template/browse",
+  templateCreate: "/template/create",
 };
 
 export default Pages;

@@ -6,7 +6,8 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 const p = [
   { name: "Homepage", href: Pages.home },
-  { name: "Create Template", href: Pages.template },
+  { name: "Create Template", href: Pages.templateCreate },
+  { name: "Browse Templates", href: Pages.templateBrowse },
   { name: "Create Tier List", href: Pages.create },
 ];
 

@@ -27,4 +27,14 @@ export const templateRouter = router({
         },
       });
     }),
+
+  get: publicProcedure.query(async ({ ctx }) => {
+    return await ctx.prisma.template.findMany({
+      take: 7,
+      include: {
+        tiers: false,
+      },
+    });
+  }),
+  // TODO: Add getall
 });

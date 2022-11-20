@@ -1,3 +1,5 @@
+import useBreakpoint from "./useBreakpoint";
 import useIsLoggedIn from "./useIsLoggedIn";
+import useWindowDimensions from "./useWindowDimensions";
 
-export { useIsLoggedIn };
+export { useBreakpoint, useIsLoggedIn, useWindowDimensions };
