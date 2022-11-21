@@ -1,5 +1,6 @@
 import type { TierItem } from "./types";
 import TierRow from "./TierRow";
+import TierWorkplace from "./TierWorkplace";
 import { useState } from "react";
 
 const dt = [
@@ -68,8 +69,11 @@ const TierList = ({ defaultTiers = dt }) => {
   };
 
   return (
-    <div className="card overflow-hidden rounded-xl border border-black/10 bg-neutral p-1 shadow-xl">
-      {renderTiers()}
+    <div className="flex flex-col gap-2">
+      <div className="card overflow-hidden rounded-xl border border-black/10 bg-neutral p-1 shadow-xl">
+        {renderTiers()}
+      </div>
+      <TierWorkplace />
     </div>
   );
 };
