@@ -28,9 +28,21 @@ const dt = [
 const TierList = ({ defaultTiers = dt }) => {
   // TODO: Add types
   const [tiers, setTiers] = useState<Array<any>>(defaultTiers);
+  const [unassigned, setUnassigned] = useState<Array<any>>([
+    { name: "777", id: 7 },
+    { name: "888", id: 8 },
+  ]);
 
   // TODO: Add types
   const moveItemToTier = (item: any, newTier: string) => {
+    // Remove item from workplace
+    if (!item.tierName) {
+      setUnassigned((prevUnassigned) => {
+        return prevUnassigned.filter((i: TierItem) => i.id !== item.id);
+      });
+    }
+
+    // Move item to correct tier
     setTiers((prevTiers) => {
       if (item.tierName === newTier) {
         return prevTiers;
@@ -54,6 +66,27 @@ const TierList = ({ defaultTiers = dt }) => {
     });
   };
 
+  const moveItemToWorkplace = (item: any) => {
+    // Remove item from tier
+    setTiers((prevTiers) =>
+      prevTiers.map((tier) => {
+        if (tier.name === item.tierName) {
+          return {
+            ...tier,
+            items: tier.items?.filter((i: TierItem) => i.id !== item.id),
+          };
+        }
+        return tier;
+      })
+    );
+
+    // Move item to workplace
+    setUnassigned((prevUnassigned) => [
+      ...prevUnassigned,
+      { ...item, tierName: undefined },
+    ]);
+  };
+
   const renderTiers = () => {
     return tiers.map((tier) => {
       return (
@@ -73,7 +106,10 @@ const TierList = ({ defaultTiers = dt }) => {
       <div className="card overflow-hidden rounded-xl border border-black/10 bg-neutral p-1 shadow-xl">
         {renderTiers()}
       </div>
-      <TierWorkplace />
+      <TierWorkplace
+        items={unassigned}
+        moveItemToWorkplace={moveItemToWorkplace}
+      />
     </div>
   );
 };

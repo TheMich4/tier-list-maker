@@ -16,7 +16,7 @@ export interface TierRowProps {
 export interface TierItemProps {
   name: string;
   id: string;
-  tierName: string;
+  tierName?: string;
 }
 
 export interface TierItemContainerProps {
