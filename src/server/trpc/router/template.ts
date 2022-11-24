@@ -13,15 +13,21 @@ export const templateRouter = router({
             name: z.string(),
           })
         ),
+        items: z.array(
+          z.object({
+            name: z.string(),
+          })
+        ),
       })
     )
     .mutation(async ({ ctx, input }) => {
       await ctx.prisma.template.create({
         data: {
           authorId: ctx.session?.user?.id,
-          description: input.description,
+          description: input.description || "",
           name: input.name,
           tiers: { create: input.tiers.map((tier) => ({ name: tier.name })) },
+          items: { create: input.items.map((item) => ({ name: item.name })) },
         },
         include: {
           tiers: true,

@@ -3,4 +3,6 @@ export interface TemplateCreateButtonsProps {
   name: string;
   // TODO: Add type
   tiers: Array<any>;
+  // TODO: Add type
+  items: Array<any>;
 }

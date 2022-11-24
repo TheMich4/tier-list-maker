@@ -21,7 +21,7 @@ const TierWorkplace = ({ items, moveItemToWorkplace }) => {
 
   return (
     <div
-      className="card min-h-[100px] flex-row gap-1 overflow-hidden rounded-xl border border-black/10 bg-neutral p-1 text-white shadow-xl"
+      className="card min-h-[100px] flex-row gap-1 overflow-hidden rounded-xl border border-black/10 bg-neutral p-1 text-black shadow-xl"
       ref={drop}
     >
       {renderItems()}

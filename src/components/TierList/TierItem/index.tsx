@@ -10,7 +10,7 @@ const TierItem = ({ name, id, tierName }: TierItemProps) => {
 
   return (
     <div
-      className="flex w-[150px] cursor-pointer items-center justify-center rounded-lg bg-base-300"
+      className="flex w-[150px] cursor-pointer items-center justify-center rounded-lg bg-base-300 transition duration-500 hover:scale-105"
       ref={drag}
     >
       {name}

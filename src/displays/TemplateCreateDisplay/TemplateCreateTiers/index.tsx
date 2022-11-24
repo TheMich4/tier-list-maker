@@ -8,7 +8,12 @@ const TemplateCreateTiers = ({ tiers, setTiers }) => {
     if (tiers.length < maxTiers) {
       setTiers((prevTiers) => [
         ...prevTiers,
-        { id: prevTiers.length, name: "" },
+        {
+          id:
+            // Increment id, start with 0 if no tiers exist
+            prevTiers.length === 0 ? 1 : prevTiers[prevTiers.length - 1].id + 1,
+          name: "",
+        },
       ]);
     }
   };

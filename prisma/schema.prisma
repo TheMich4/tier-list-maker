@@ -74,10 +74,18 @@ model Template {
   author      User?     @relation(fields: [authorId], references: [id])
   authorId    String?
   tiers       Tier[]
-  description String
+  description String?
+  items       Item[]
 }
 
 model Tier {
+  id          String   @id @default(cuid())
+  name        String
+  template    Template @relation(fields: [templateId], references: [id])
+  templateId  Int
+}
+
+model Item {
   id          String   @id @default(cuid())
   name        String
   template    Template @relation(fields: [templateId], references: [id])

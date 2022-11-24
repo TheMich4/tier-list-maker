@@ -1,6 +1,7 @@
 import { Card, Input } from "../../components";
 
 import TemplateCreateButtons from "./TemplateCreateButtons";
+import TemplateCreateItems from "./TemplateCreateItems";
 import TemplateCreateTiers from "./TemplateCreateTiers";
 import { useState } from "react";
 
@@ -8,6 +9,7 @@ const TemplateCreateDisplay = () => {
   const [description, setDescription] = useState<string>("");
   const [name, setName] = useState<string>("");
   const [tiers, setTiers] = useState([]);
+  const [items, setItems] = useState([]);
 
   return (
     <div className="flex w-full flex-col items-center justify-center gap-2">
@@ -26,10 +28,13 @@ const TemplateCreateDisplay = () => {
 
       <TemplateCreateTiers tiers={tiers} setTiers={setTiers} />
 
+      <TemplateCreateItems items={items} setItems={setItems} />
+
       <TemplateCreateButtons
         name={name}
         tiers={tiers}
         description={description}
+        items={items}
       />
     </div>
   );
