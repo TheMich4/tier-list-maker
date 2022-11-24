@@ -32,9 +32,9 @@ const NavbarProfileDropdown = () => {
               <span className="badge">New</span>
             </a>
           </li>
-          <li>
+          {/* <li>
             <a>Settings</a>
-          </li>
+          </li> */}
         </>
       )}
       <li>
