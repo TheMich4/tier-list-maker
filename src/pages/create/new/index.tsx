@@ -1,8 +1,8 @@
-import { Input, TierList } from "../../components";
+import { Input, TierList } from "../../../components";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import type { NextPage } from "next";
-import PageContainer from "../../containers";
+import PageContainer from "../../../containers";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 

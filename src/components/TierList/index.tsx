@@ -1,6 +1,8 @@
+import Button from "../Button";
 import type { TierItem } from "./types";
 import TierRow from "./TierRow";
 import TierWorkplace from "./TierWorkplace";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 
 const dt = [
@@ -66,6 +68,20 @@ const TierList = ({ defaultTiers = dt }) => {
     });
   };
 
+  const addTier = () => {
+    // TODO: increment tier id
+    // Tiers can have changed order so +1 doesn't work
+    setTiers((prevTiers) => {
+      return [
+        ...prevTiers,
+        {
+          name: "New Tier",
+          color: "gray-200",
+        },
+      ];
+    });
+  };
+
   const moveItemToWorkplace = (item: any) => {
     // Remove item from tier
     setTiers((prevTiers) =>
@@ -103,6 +119,16 @@ const TierList = ({ defaultTiers = dt }) => {
 
   return (
     <div className="flex flex-col gap-2">
+      <div>
+        <Button
+          Icon={faPlus}
+          iconProps={{ color: "black" }}
+          onClick={addTier}
+          disabled={tiers.length >= 10}
+        >
+          Add new tier
+        </Button>
+      </div>
       <div className="card overflow-hidden rounded-xl border border-black/10 bg-neutral p-1 shadow-xl">
         {renderTiers()}
       </div>

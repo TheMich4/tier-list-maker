@@ -1,9 +1,16 @@
+import { faGear, faGripLines } from "@fortawesome/free-solid-svg-icons";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGear } from "@fortawesome/free-solid-svg-icons";
 
 const TierSettings = () => {
   return (
-    <div className="ml-1 flex w-[50px] items-center justify-center rounded-lg border border-base-100/10">
+    <div className="ml-1 flex w-[50px] flex-col items-center justify-evenly rounded-lg border border-base-100/10">
+      <FontAwesomeIcon
+        icon={faGripLines}
+        color="white"
+        size="lg"
+        className="cursor-pointer"
+      />
       <button className="">
         <FontAwesomeIcon icon={faGear} color="white" size="lg" />
       </button>

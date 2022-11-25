@@ -1,6 +1,6 @@
 const Pages = {
   about: "/about",
-  create: "/create",
+  create: "/create/new",
   home: "/",
   login: "/auth/login",
   profile: "/profile",
