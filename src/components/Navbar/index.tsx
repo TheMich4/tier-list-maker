@@ -11,7 +11,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="navbar mb-8 flex justify-between rounded-xl bg-neutral shadow-xl">
+    <div className="navbar mb-8 flex justify-between rounded-xl bg-base-200 text-white shadow-xl">
       <NavbarHamburger />
 
       <a

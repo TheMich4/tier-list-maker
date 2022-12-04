@@ -8,7 +8,7 @@ import Image from "next/image";
 
 const TemplateCard = ({ template }) => {
   return (
-    <div className="card h-[350px] w-[300px] transform cursor-pointer bg-base-100 shadow-xl transition duration-500 hover:scale-105">
+    <div className="card h-[350px] w-[300px] transform cursor-pointer bg-base-100 shadow-xl shadow-base-200/50 transition duration-500 hover:scale-105">
       <figure>
         <Image
           src="https://placeimg.com/400/225/arch"
